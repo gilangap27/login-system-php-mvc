@@ -1,4 +1,13 @@
 
+<?php 
+session_start();
+
+// SESSION
+if ( !isset($_SESSION['login']) ) {
+	header("Location: login.php");
+	exit;
+}
+ ?>
 
 
 
@@ -45,7 +54,7 @@
 <body>
 	<div class="container">
 		<h1>WEBSITE KEREN</h1>	
-		<a href="">Logout</a>	
+		<a href="assets/logout.php">Logout</a>	
 	</div>
 </body>
 </html>

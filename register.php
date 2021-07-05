@@ -1,3 +1,23 @@
+
+<?php 
+require 'assets/functions.php';
+
+// SESSION
+if ( isset($_SESSION['login']) ) {
+	header("Location: index.php");
+	exit;
+}
+
+// cek
+if ( isset($_POST['register'])) {
+	if ( userBaru($_POST) ) {
+		header("Location: login.php");
+	} 
+}
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -17,12 +37,12 @@
 				<h1 class="judul">Register</h1>
 				<form action="" method="post">
 					<label for="username">Username : </label>
-					<input type="text" name="username" id="username">
+					<input type="text" name="username" id="username" required>
 					<label for="password">Password : </label>
-					<input type="password" name="password" id="password">
-					<label for="password2">Konfirmasi Password : </label>
-					<input type="password" name="password2" id="password2">
-					<button type="submit">Register</button>
+					<input type="password" name="password" id="password" required>
+					<label for="konpassword">Konfirmasi Password : </label>
+					<input type="password" name="konpassword" id="konpassword" required>
+					<button type="submit" name="register">Register</button>
 				</form>
 			</div>
 		</div>
