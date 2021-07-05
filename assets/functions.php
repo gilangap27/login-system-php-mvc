@@ -62,6 +62,13 @@ function login($data) {
 
 		// cek password apakah sama dengan yang ada di database
 		if ( password_verify($password, $row["password"]) ) {
+			// cek jika checkbox remember me ditekan
+			if ( isset($data['remember']) ) {
+				// set cookie dengn interval 1jam
+				// Tanda / di setcookie digunakan karena login.php dan logout.php berbeda path
+				setcookie('no', $row['id'], time()+60*60, "/");
+				setcookie('key', hash('ripemd256', $row['username']), time()+60*60, "/");
+			}
 			return true;
 		}
 	}

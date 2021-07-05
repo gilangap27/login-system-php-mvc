@@ -3,6 +3,23 @@
 session_start();
 require 'assets/functions.php';
 
+// COOKIE
+if ( isset($_COOKIE['no']) && isset($_COOKIE['key']) ) {
+	$no = $_COOKIE['no'];
+	$key = $_COOKIE['key'];
+
+	// Mengambil data id dari database
+	$result = mysqli_query($db, "SELECT * FROM users WHERE id = $no");
+	$row = mysqli_fetch_assoc($result);
+
+	// Cek apakah username sama
+	if ( hash('ripemd256', $row['username']) == $key ) {
+		// Buat session
+		$_SESSION['login'] = true;
+	}
+
+}
+
 // SESSION
 if ( isset($_SESSION['login']) ) {
 	header("Location: index.php");
@@ -42,6 +59,7 @@ if ( isset($_POST['login']) ) {
 			</div>
 			<div class="register-tab">
 				<h1 class="judul">Login</h1>
+				<!-- Generate paragraf jika input salah -->
 				<?php if( isset($error) ) : ?>
 					<b class="error">Username/Password Anda salah</b>
 				<?php endif; ?>

@@ -9,8 +9,6 @@ if ( !isset($_SESSION['login']) ) {
 }
  ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +51,7 @@ if ( !isset($_SESSION['login']) ) {
 </head>
 <body>
 	<div class="container">
-		<h1>WEBSITE KEREN</h1>	
+		<h1>WEBSITE KEREN</h1>
 		<a href="assets/logout.php">Logout</a>	
 	</div>
 </body>
