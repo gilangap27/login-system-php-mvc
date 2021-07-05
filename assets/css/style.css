@@ -57,7 +57,7 @@ label {
 	font-weight: 700;
 }
 
-input {
+input[type=text], input[type=password] {
 	height: 1.8rem;
 	border: none;
 	background: #D9D9D9;
@@ -66,8 +66,9 @@ input {
 }
 
 button {
-	margin: 1.5rem auto;
-	width: 120px;
+	margin: auto;
+	margin-top: 1.5rem;
+	width: 200px;
 	height: 40px;
 	font-size: 1.1rem;
 	font-weight: bold;
@@ -82,6 +83,19 @@ button {
 
 button:hover {
 	opacity: 0.8;
+}
+
+p {
+	margin-top: .5rem;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	color: #464646;
+}
+
+.bi {
+	font-size: 2.5rem;
+	color: #5C5C5C;
+	margin-right: .5rem;
 }
 
 
