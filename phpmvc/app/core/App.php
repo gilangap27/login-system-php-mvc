@@ -3,8 +3,8 @@
 class App
 {
   protected $controller = 'Home';
-  protected $method = 'Index';
-  protected $params;
+  protected $method = 'index';
+  protected $params = [];
 
   public function __construct()
   {
@@ -32,7 +32,7 @@ class App
       $this->params = array_values($url);
     }
     // jalankan controller dan method, serta kirimkan parms jika ada
-    call_user_func_array($this->controller, $this->method, $this->params);
+    call_user_func_array([$this->controller, $this->method], $this->params);
   }
 
   public function pecahURL()
