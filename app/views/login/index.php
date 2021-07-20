@@ -34,7 +34,7 @@
         </div>
         <button type="submit" name="login">Login</button>
       </form>
-      <p>Belum punya <a href="register.php">akun</a>?</p>
+      <p>Belum punya <a href="<?= BASEURL; ?>/register/index">akun</a>?</p>
       <div class="icon">
         <a href=""><i class="bi bi-facebook"></i></a>
         <a href=""><i class="bi bi-instagram"></i></a>

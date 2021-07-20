@@ -47,7 +47,7 @@
 <body>
   <div class="container">
     <h1>WEBSITE KEREN</h1>
-    <a href="">Logout</a>
+    <a href="<?= BASEURL; ?>/Logout/index">Logout</a>
   </div>
 </body>
 
