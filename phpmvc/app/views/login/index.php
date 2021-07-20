@@ -23,7 +23,7 @@
       <?php if (isset($error)) : ?>
         <b class="error">Username/Password Anda salah</b>
       <?php endif; ?>
-      <form action="" method="post">
+      <form action="<?= BASEURL; ?>/login/cek" method="post">
         <label for="username">Username : </label>
         <input type="text" name="username" id="username" required>
         <label for="password">Password : </label>
