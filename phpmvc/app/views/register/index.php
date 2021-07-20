@@ -17,7 +17,7 @@
     </div>
     <div class="register-tab">
       <h1 class="judul">Register</h1>
-      <form action="" method="post">
+      <form action="<?= BASEURL; ?>/register/tambah" method="post">
         <label for="username">Username : </label>
         <input type="text" name="username" id="username" required>
         <label for="password">Password : </label>
