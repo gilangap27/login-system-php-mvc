@@ -1,10 +1,16 @@
 <?php
+session_start();
 
 class Register extends Controller
 {
   public function index()
   {
-    $this->view('register/index');
+    if (isset($_SESSION['login'])) {
+      $this->view('home/index');
+    } else {
+      $this->view('register/index');
+      exit;
+    }
   }
   public function tambah()
   {

@@ -8,7 +8,7 @@ class Home extends Controller
     if ($_SESSION['login'] == true) {
       $this->view('home/index');
     } else {
-      header('Location: ' . BASEURL . '/login/index');
+      $this->view('login/index');
       exit;
     }
   }
