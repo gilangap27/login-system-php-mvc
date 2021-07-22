@@ -5,10 +5,10 @@ class Home extends Controller
 {
   public function index()
   {
-    if ($_SESSION['login'] == true) {
+    if (isset($_SESSION['login'])) {
       $this->view('home/index');
     } else {
-      $this->view('login/index');
+      header('Location: ' . BASEURL . '/login/index');
       exit;
     }
   }

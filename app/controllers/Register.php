@@ -6,7 +6,7 @@ class Register extends Controller
   public function index()
   {
     if (isset($_SESSION['login'])) {
-      $this->view('home/index');
+      header('Location: ' . BASEURL . '/home/index');
     } else {
       $this->view('register/index');
       exit;
@@ -17,6 +17,7 @@ class Register extends Controller
     if (isset($_POST['register'])) {
       if ($this->model('Register_model')->userBaru($_POST)) {
         header('Location: ' . BASEURL . '/login/index');
+        exit;
       } else {
         echo "<script>
               alert('Register Gagal');
